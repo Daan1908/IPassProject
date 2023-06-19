@@ -15,6 +15,8 @@ public class LeesForm {
     public Response leesData(FormData formData) {
         String reisNaam = formData.getName();
         String reisOmschrijving = formData.getReisOmschrijving();
+        System.out.println("reisnaam: " + reisNaam);
+        System.out.println("reisomschrijving: " + reisOmschrijving);
         return Response.ok("Form data received successfully").build();
     }
 
