@@ -13,19 +13,19 @@
             <div class="leftSide">
                 <h1 class="formHeader">Vakantie Toevoegen!</h1>
                 <div class="formContentContainer">
-                   <form method="post" id="myForm">
-                        <label class= formLabel for="reisNaam">DaanReisnaam:</label>
+                   <form method="post" id="myForm" action="/restservices/reizen/nieuwereis">
+                        <label class= formLabel for="reisNaam">Reisnaam:</label>
                         <input class= "formInput" type="text" id="reisNaam" name="reisNaam">
 
-                        <label class= formLabel for="reisOmschrijving">Omschrijving:</label>
-                        <input class= "formInput" type="text" id="reisOmschrijving" name="reisOmschrijving">
+                        <label class= formLabel for="aantalPersonen">Aantal Personen:</label>
+                        <input class= "formInput" type="number" id="aantalPersonen" name="aantalPersonen">
                         
-                        <label class= formLabel for="beginDatum">Begindatum:</label>
-                        <input class= "formInput" type="date" id="beginDatum" name="beginDatum">
+                        <label class= formLabel for="continent">Continent:</label>
+                        <input class= "formInput" type="text" id="continent" name="continent">
 
                         
-                        <label class= formLabel for="eindDatum">Einddatum:</label>
-                        <input class= "formInput" type="date" id="eindDatum" name="eindDatum">
+                        <label class= formLabel for="aantalDagen">Aantal Dagen:</label>
+                        <input class= "formInput" type="number" id="aantalDagen" name="aantalDagen">
 
                         <button class="submitButton" type="submit">Voeg vakantie toe</button>
                         <button class="resetButton" type="reset">Reset</button>
