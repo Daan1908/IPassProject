@@ -26,30 +26,21 @@ public class ReisResource {
     @Path("nieuwereis")
     @POST
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-    public Reis createReis(@FormParam("reisNaam") String name,
+    public Reis createReis(@FormParam("reisNaam") String reisNaam,
                              @FormParam("aantalPersonen") int aantalPersonen,
                              @FormParam("continent") String continent,
                              @FormParam("aantalDagen") int aantalDagen) {
-        Reis reis = new Reis(name, aantalPersonen, continent, aantalDagen);
-        MijnReizen.voegToeAanLijst1(reis);
+        Reis reis = new Reis(reisNaam, aantalPersonen, continent, aantalDagen);
+        MijnReizen.voegToeAanLijst(reis);
 
         JsonArrayBuilder jab = Json.createArrayBuilder();
         JsonObjectBuilder job = Json.createObjectBuilder();
-        job.add("reisnaam", name);
-        job.add("AantalPersonen", aantalPersonen);
-        job.add("Continent", continent);
-        job.add("AantalDagen", aantalDagen);
+        job.add("reisNaam", reisNaam);
+        job.add("aantalPersonen", aantalPersonen);
+        job.add("continent", continent);
+        job.add("aantalDagen", aantalDagen);
         jab.add(job);
         JsonArray array = jab.build();
-
-        try {
-            FileWriter file = new FileWriter("C:/Users/Daan/IdeaProjects/IPass/src/main/java/nl/ipass/Reizen.json");
-            file.write(array.toString());
-            file.close();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
         return reis;
     }
 

@@ -1,15 +1,15 @@
 package nl.ipass.model;
 
 public class Reis {
-    private String naam;
-    private int aantalPersonen;
+    private String reisNaam;
     private String continent;
+    private int aantalPersonen;
     private int aantalDagen;
 
     public Reis(String nm, int aanprs, String cont, int aandg) {
-        this.naam = nm;
-        this.aantalPersonen = aanprs;
+        this.reisNaam = nm;
         this.continent = cont;
+        this.aantalPersonen = aanprs;
         this.aantalDagen = aandg;
     }
 
@@ -18,7 +18,7 @@ public class Reis {
     }
 
     public String getNaam() {
-        return naam;
+        return reisNaam;
     }
 
     public int getAantalDagen() {
