@@ -40,6 +40,11 @@ public class MijnReizen implements java.io.Serializable {
         alleReizen.remove(id);
     }
 
+    public static void muteerInLijst(int id, Reis reis) {
+        alleReizen.remove(id);
+        alleReizen.add(id, reis);
+    }
+
     public ArrayList<Reis> getAllCountries() {
         return alleReizen;
     }

@@ -17,7 +17,13 @@ function reisview() {
                     var item = data[i];
 
                     html += '<TR><TD>' + item.naam + '</TD><TD>' + item.contintent + '</TD><TD>';
-                    html +=     '<TD>' + item.aantalDagen + '</TD><TD>' + item.aantalPersonen + '</TD><TD><a href="restservices/reizen/verwijderreis?id='+ i +'">Delete</a></TD></TR>'
+                    html += '<TD>' + item.aantalDagen + '</TD><TD>' + item.aantalPersonen + '</TD>';
+                    html += '<TD><a href="restservices/reizen/verwijderreis?id='+ i +'">Delete</a></TD>'
+                    html += '<TD><a href="ReisMuteren.html?id='+ i;
+                    html += '&reisNaam=' + item.naam;
+                    html += '&aantalPersonen=' + item.aantalPersonen;
+                    html += '&continent=' + item.contintent;
+                    html += '&aantalDagen=' + item.aantalDagen +'">Update</a></TD></TR>';
                 }
                 html += '</TBODY></TABLE>';
 

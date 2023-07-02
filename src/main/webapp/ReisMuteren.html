@@ -7,16 +7,27 @@
     <style>
     </style>
 
-    <body>
+    <body onload="updatereis()">
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+
+        const id = params.get('id');
+        const reisNaam = params.get('reisNaam');
+        const continent = params.get('continent');
+        const aantalPersonen = params.get('aantalPersonen');
+        const aantalDagen = params.get('aantalDagen');
+    </script>
+
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="Reizen.html">Reizen</a></li>
         </ul>
         <div class="formContainer">
             <div class="leftSide">
-                <h1 class="formHeader">Vakantie Toevoegen!</h1>
+                <h1 class="formHeader">Vakantie Wijzigen!</h1>
                 <div class="formContentContainer">
-                   <form method="post" id="myForm" action="/restservices/reizen/nieuwereis">
+                   <form method="post" id="myForm" action="/restservices/reizen/updatereis">
                         <label class= formLabel for="reisNaam">Reisnaam:</label>
                         <input class= "formInput" type="text" id="reisNaam" name="reisNaam">
 
@@ -26,25 +37,26 @@
                         <label class= formLabel for="continent">Continent:</label>
                         <input class= "formInput" type="text" id="continent" name="continent">
 
-<!--                       <label class= formLabel for="landinput">Land:</label>-->
-<!--                       <select name="land" id="landinput" class="formInput">-->
-
-<!--                       </select>-->
-
-                        
                         <label class= formLabel for="aantalDagen">Aantal Dagen:</label>
                         <input class= "formInput" type="number" id="aantalDagen" name="aantalDagen">
 
+                       <input class= "formInput" type="number" id="id" name="id">
 
-                        <button class="submitButton" type="submit">Voeg vakantie toe</button>
-                        <button class="resetButton" type="reset">Reset</button>
+                       <button class="submitButton" type="submit">wijzig vakantie gegevens</button>
+                       <button class="resetButton" type="reset">Reset</button>
                    </form>
                 </div>
             </div>
         </div>
 
-        <script>
-        </script>
+    <script>
+        alert(id + " " + reisNaam + " " + continent + " " + aantalPersonen+ " " + aantalDagen );
+        document.getElementById('reisNaam').value = reisNaam;
+        document.getElementById('continent').value = continent;
+        document.getElementById('aantalPersonen').value = aantalPersonen;
+        document.getElementById('aantalDagen').value = aantalDagen;
+        document.getElementById('id').value = id;
+    </script>
 
     </body>
     
