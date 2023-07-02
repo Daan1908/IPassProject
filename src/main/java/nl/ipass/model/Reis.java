@@ -1,6 +1,6 @@
 package nl.ipass.model;
 
-public class Reis {
+public class Reis implements java.io.Serializable {
     private String reisNaam;
     private String continent;
     private int aantalPersonen;

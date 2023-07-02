@@ -1,12 +1,11 @@
 package nl.ipass.model;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import nl.ipass.FileManager;
 
-public class MijnReizen {
-    private static List<Reis> alleReizen = new ArrayList<>();
+import java.util.ArrayList;
+
+public class MijnReizen implements java.io.Serializable {
+    private static ArrayList<Reis> alleReizen = new ArrayList<>();
 
     private static MijnReizen my_reis = new MijnReizen();
 
@@ -19,18 +18,24 @@ public class MijnReizen {
     }
 
     private MijnReizen() {
-        alleReizen.add(new Reis("Thailand", 26, "Azie", 21));
-        alleReizen.add(new Reis("Indonesie", 24, "Azie", 21));
-        alleReizen.add(new Reis("Panama/Costarica", 22, "Noord-Amerika", 21));
+          alleReizen = FileManager.ReadReis();
+/*        alleReizen.add(new Reis("Thailand 2", 26, "Azie", 21));
+       alleReizen.add(new Reis("Indonesie", 24, "Azie", 21));
+      alleReizen.add(new Reis("Panama/Costarica", 22, "Noord-Amerika", 21));
         alleReizen.add(new Reis("Cuba", 22, "Noord-Amerika", 21));
-        alleReizen.add(new Reis("Noorwegen", 3, "Europa", 21));
+        alleReizen.add(new Reis("Noorwegen 2", 3, "Europa", 21));
+*/
     }
 
     public static void voegToeAanLijst(Reis reis) {
+        if (alleReizen == null)
+        {
+            alleReizen = new ArrayList<>();
+        }
         alleReizen.add(reis);
     }
 
-    public List<Reis> getAllCountries() {
+    public ArrayList<Reis> getAllCountries() {
         return alleReizen;
     }
 }

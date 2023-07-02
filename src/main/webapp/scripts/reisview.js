@@ -15,15 +15,6 @@ function reisview() {
                 for (var i=0; i<data.length; i++)
                 {
                     var item = data[i];
-                    // html += '<div class="rij"><div class="reisNaam">';
-                    // html += item.naam;
-                    // html += '</div><div class="continent">';
-                    //html += item.contintent;
-                    // html += '</div><div class="aantaDagen">';
-                    // html += item.aantalDagen
-                    // html += '</div><div class="aantalPersonen">';
-                    // html += item.aantalPersonen
-                    // html += '</div></div>';
 
                     html += '<TR><TD>' + item.naam + '</TD><TD>' + item.contintent + '</TD><TD>';
                     html +=     '<TD>' + item.aantalDagen + '</TD><TD>' + item.aantalPersonen + '</TD></TR>'

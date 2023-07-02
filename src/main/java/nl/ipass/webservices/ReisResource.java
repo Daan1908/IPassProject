@@ -10,8 +10,6 @@ import javax.json.JsonObjectBuilder;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.List;
 
 @Path("reizen")
