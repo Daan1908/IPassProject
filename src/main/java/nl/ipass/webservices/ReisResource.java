@@ -10,6 +10,7 @@ import javax.json.JsonObjectBuilder;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.net.URL;
 import java.util.List;
 
 @Path("reizen")
@@ -30,7 +31,7 @@ public class ReisResource {
                              @FormParam("aantalDagen") int aantalDagen) {
         Reis reis = new Reis(reisNaam, aantalPersonen, continent, aantalDagen);
         MijnReizen.voegToeAanLijst(reis);
-
+/*
         JsonArrayBuilder jab = Json.createArrayBuilder();
         JsonObjectBuilder job = Json.createObjectBuilder();
         job.add("reisNaam", reisNaam);
@@ -39,7 +40,17 @@ public class ReisResource {
         job.add("aantalDagen", aantalDagen);
         jab.add(job);
         JsonArray array = jab.build();
+*/
         return reis;
+    }
+
+    @Path("verwijderreis")
+    @GET
+    public void deleteReis(@QueryParam("id") int id) {
+
+        System.out.println("Header parameter id : " + id);
+        MijnReizen.verwijderVanLijst(id);
+
     }
 
 }

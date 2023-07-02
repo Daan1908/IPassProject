@@ -1,4 +1,4 @@
-var Reizen; //arraylist<kennisitem> currently in the list
+var Reizen;
 
 function reisview() {
     var returnPromise = service_getreizen();
@@ -17,7 +17,7 @@ function reisview() {
                     var item = data[i];
 
                     html += '<TR><TD>' + item.naam + '</TD><TD>' + item.contintent + '</TD><TD>';
-                    html +=     '<TD>' + item.aantalDagen + '</TD><TD>' + item.aantalPersonen + '</TD></TR>'
+                    html +=     '<TD>' + item.aantalDagen + '</TD><TD>' + item.aantalPersonen + '</TD><TD><a href="restservices/reizen/verwijderreis?id='+ i +'">Delete</a></TD></TR>'
                 }
                 html += '</TBODY></TABLE>';
 
