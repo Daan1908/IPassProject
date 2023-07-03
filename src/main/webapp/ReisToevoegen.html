@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
         <link rel="stylesheet" href="styles/ReisToevoegen.css" type="text/css">
     </head>
 
@@ -16,7 +17,7 @@
             <div class="leftSide">
                 <h1 class="formHeader">Vakantie Toevoegen!</h1>
                 <div class="formContentContainer">
-                   <form method="post" id="myForm" action="/restservices/reizen/nieuwereis">
+                   <form method="post" id="myForm" action="/restservices/reizen/nieuwereis" target="_top">
                         <label class= formLabel for="reisNaam">Reisnaam:</label>
                         <input class= "formInput" type="text" id="reisNaam" name="reisNaam">
 
@@ -24,7 +25,15 @@
                         <input class= "formInput" type="number" id="aantalPersonen" name="aantalPersonen">
                         
                         <label class= formLabel for="continent">Continent:</label>
-                        <input class= "formInput" type="text" id="continent" name="continent">
+                        <select class="formInput" type="text" id="continent" name="continent">
+                            <option value="Afrika">Afrika</option>
+                            <option value="Azië">Azië</option>
+                            <option value="Europa">Europa</option>
+                            <option value="Noord Amerika">Noord Amerika</option>
+                            <option value="Oceanië">Oceanië</option>
+                            <option value="Zuid Amerika">Zuid Amerika</option>
+                        </select>
+                            <!-- <input class= "formInput" type="text" id="continent" name="continent"> -->
 
 <!--                       <label class= formLabel for="landinput">Land:</label>-->
 <!--                       <select name="land" id="landinput" class="formInput">-->

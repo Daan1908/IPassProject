@@ -3,10 +3,6 @@ package nl.ipass.webservices;
 import nl.ipass.model.Reis;
 import nl.ipass.model.MijnReizen;
 
-import javax.json.Json;
-import javax.json.JsonArray;
-import javax.json.JsonArrayBuilder;
-import javax.json.JsonObjectBuilder;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -31,16 +27,7 @@ public class ReisResource {
                              @FormParam("aantalDagen") int aantalDagen) {
         Reis reis = new Reis(reisNaam, aantalPersonen, continent, aantalDagen);
         MijnReizen.voegToeAanLijst(reis);
-/*
-        JsonArrayBuilder jab = Json.createArrayBuilder();
-        JsonObjectBuilder job = Json.createObjectBuilder();
-        job.add("reisNaam", reisNaam);
-        job.add("aantalPersonen", aantalPersonen);
-        job.add("continent", continent);
-        job.add("aantalDagen", aantalDagen);
-        jab.add(job);
-        JsonArray array = jab.build();
-*/
+
         return reis;
     }
 

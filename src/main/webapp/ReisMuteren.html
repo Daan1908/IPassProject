@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
         <link rel="stylesheet" href="styles/ReisToevoegen.css" type="text/css">
     </head>
-
     <style>
     </style>
 
@@ -28,21 +28,28 @@
                 <h1 class="formHeader">Vakantie Wijzigen!</h1>
                 <div class="formContentContainer">
                    <form method="post" id="myForm" action="/restservices/reizen/updatereis">
-                        <label class= formLabel for="reisNaam">Reisnaam:</label>
-                        <input class= "formInput" type="text" id="reisNaam" name="reisNaam">
+                       <label class= formLabel for="reisNaam">Reisnaam:</label>
+                       <input class= "formInput" type="text" id="reisNaam" name="reisNaam">
 
-                        <label class= formLabel for="aantalPersonen">Aantal Personen:</label>
-                        <input class= "formInput" type="number" id="aantalPersonen" name="aantalPersonen">
-                        
-                        <label class= formLabel for="continent">Continent:</label>
-                        <input class= "formInput" type="text" id="continent" name="continent">
+                       <label class= formLabel for="aantalPersonen">Aantal Personen:</label>
+                       <input class= "formInput" type="number" id="aantalPersonen" name="aantalPersonen">
 
-                        <label class= formLabel for="aantalDagen">Aantal Dagen:</label>
-                        <input class= "formInput" type="number" id="aantalDagen" name="aantalDagen">
+                       <label class= formLabel for="continent">Continent:</label>
+                       <select class="formInput" type="text" id="continent" name="continent">
+                           <option value="Afrika">Afrika</option>
+                           <option value="Azië">Azië</option>
+                           <option value="Europa">Europa</option>
+                           <option value="Noord Amerika">Noord Amerika</option>
+                           <option value="Oceanië">Oceanië</option>
+                           <option value="Zuid Amerika">Zuid Amerika</option>
+                       </select>
 
-                       <input class= "formInput" type="number" id="id" name="id">
+                       <label class= formLabel for="aantalDagen">Aantal Dagen:</label>
+                       <input class= "formInput" type="number" id="aantalDagen" name="aantalDagen">
 
-                       <button class="submitButton" type="submit">wijzig vakantie gegevens</button>
+                       <input class= "formInput" type="hidden" id="id" name="id">
+
+                       <button class="submitButton" type="submit">Wijzig vakantie gegevens</button>
                        <button class="resetButton" type="reset">Reset</button>
                    </form>
                 </div>
@@ -50,7 +57,7 @@
         </div>
 
     <script>
-        alert(id + " " + reisNaam + " " + continent + " " + aantalPersonen+ " " + aantalDagen );
+        // alert(id + " " + reisNaam + " " + continent + " " + aantalPersonen+ " " + aantalDagen );
         document.getElementById('reisNaam').value = reisNaam;
         document.getElementById('continent').value = continent;
         document.getElementById('aantalPersonen').value = aantalPersonen;

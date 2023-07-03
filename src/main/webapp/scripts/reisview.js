@@ -9,14 +9,20 @@ function reisview() {
             response.json().then(data => {
                 //build the result html into the list
 
-                var html = '<TABLE><TBODY><TR><TD>Land</TD><TD>Continent</TD><TD>Dagen</TD><TD>Personen</TD></TR>'
-                html += '<TR><TD>&nbsp</TD></TR>';
+                var html = '<TABLE><TBODY><TR><TD width="25%">Land</TD><TD width="25%">Continent</TD><TD width="15%">Dagen</TD>';
+                html += '                     <TD width="15%">Personen</TD><TD width="10%">&nbsp;</TD><TD width="10%">&nbsp;</TD></TR>'
+                html += '<TR><TD colspan="6">&nbsp;</TD></TR>';
 
                 for (var i=0; i<data.length; i++)
                 {
                     var item = data[i];
 
-                    html += '<TR><TD>' + item.naam + '</TD><TD>' + item.contintent + '</TD><TD>';
+                    var backcolor = "ffffff";
+                    if (i % 2 == 0)
+                    {
+                        backcolor = "dddddd";
+                    }
+                    html += '<TR bgcolor="' + backcolor + '"><TD>' + item.naam + '</TD><TD>' + item.contintent + '</TD>';
                     html += '<TD>' + item.aantalDagen + '</TD><TD>' + item.aantalPersonen + '</TD>';
                     html += '<TD><a href="restservices/reizen/verwijderreis?id='+ i +'">Delete</a></TD>'
                     html += '<TD><a href="ReisMuteren.html?id='+ i;

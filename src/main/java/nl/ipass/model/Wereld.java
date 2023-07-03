@@ -1,7 +1,6 @@
 package nl.ipass.model;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Wereld {
     private ArrayList<Land> alleLanden = new ArrayList<Land>();
